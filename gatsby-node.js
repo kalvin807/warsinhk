@@ -35,6 +35,8 @@ const PUBLISHED_SPREADSHEET_WARS_CASES_LOCATION_URL =
 const PUBLISHED_SPREADSHEET_BOT_WARS_LATEST_FIGURES_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTiCndDnXu6l5ZKq2aAVgU2xM3WGGW68XF-pEbLAloRbOzA1QwglLGJ6gTKjFbLQGhbH6GR2TsJKrO7/pub?gid=0"
 
+const PUBLISHED_SPREADSHEET_EPIDEMIC_CURVE_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTvBVmXpY_zziEY_onMntWqEi3GM4cazp3ILcquBdEYrl6g8VEtu4q80XElS6M2XUAMr-VE9KPwAAXu/pub?gid=0"
 const GRAPHQL_URL = "https://api2.vote4.hk/v1/graphql"
 
 const createIMMDNode = async ({
@@ -323,6 +325,11 @@ exports.sourceNodes = async props => {
       "BotWarsLatestFigures",
       { skipFirstLine: true, alwaysEnabled: true }
     ),
+      PUBLISHED_SPREADSHEET_EPIDEMIC_CURVE_URL,
+      "EpidemicData",
+      { skipFirstLine: true, alwaysEnabled: true }
+    ),
+    createNode(props, SHEET_SHOP_MASTER, "Shop"),
     createNode(props, SHEET_ALERT_MASTER, "Alert"),
     createNode(
       props,
