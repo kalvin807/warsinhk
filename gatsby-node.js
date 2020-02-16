@@ -34,6 +34,8 @@ const PUBLISHED_SPREADSHEET_WARS_CASES_LOCATION_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vT6aoKk3iHmotqb5_iHggKc_3uAA901xVzwsllmNoOpGgRZ8VAA3TSxK6XreKzg_AUQXIkVX5rqb0Mo/pub?gid=0"
 const PUBLISHED_SPREADSHEET_BOT_WARS_LATEST_FIGURES_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTiCndDnXu6l5ZKq2aAVgU2xM3WGGW68XF-pEbLAloRbOzA1QwglLGJ6gTKjFbLQGhbH6GR2TsJKrO7/pub?gid=0"
+const PUBLISHED_SPREADSHEET_WARS_CASES_RELATIONSHIP_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQS7Aay-dZbemZAxbW1oVrC5QKnT9wPjd55hSGGnXGj8_jdZJa9dsKYI--dTv4EU--xt_HGIDZsdNEw/pub?gid=0"
 
 const PUBLISHED_SPREADSHEET_EPIDEMIC_CURVE_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTvBVmXpY_zziEY_onMntWqEi3GM4cazp3ILcquBdEYrl6g8VEtu4q80XElS6M2XUAMr-VE9KPwAAXu/pub?gid=0"
@@ -330,6 +332,12 @@ exports.sourceNodes = async props => {
       PUBLISHED_SPREADSHEET_EPIDEMIC_CURVE_URL,
       "EpidemicData",
       { skipFirstLine: true, alwaysEnabled: true }
+    ),
+    createPublishedGoogleSpreadsheetNode(
+      props,
+      PUBLISHED_SPREADSHEET_WARS_CASES_RELATIONSHIP_URL,
+      "WarsCaseRelation",
+      { skipFirstLine: true }
     ),
     createNode(props, SHEET_ALERT_MASTER, "Alert"),
     createNode(
